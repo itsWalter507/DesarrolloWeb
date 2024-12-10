@@ -1,0 +1,197 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header a, footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Menú */
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative; /* Define un contenedor relativo */
+    z-index: 10; /* Coloca el menú encima de todo */
+}
+
+nav ul li {
+    position: relative; /* Define un contenedor para los submenús */
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #e0e0e0;
+}
+
+nav ul li:hover > ul {
+    display: block; /* Muestra el submenú */
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    border-radius: 8px;
+    min-width: 200px;
+    z-index: 20; /* Asegura que el submenú esté encima */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul ul li {
+    padding: 8px 20px;
+}
+
+nav ul ul li a {
+    white-space: nowrap; /* Evita que el texto se corte */
+}
+
+/* Ajustes adicionales */
+.slider {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    z-index: 1; /* Coloca el slider por debajo del menú */
+}
+
+.slider-contenido img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    display: none; /* Oculta todas las imágenes inicialmente */
+    border-radius: 10px;
+}
+
+/* Nuevas adquisiciones y populares */
+.libros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.libros img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.libros img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Correcciones de jerarquía */
+.slider,
+.nuevas-adquisiciones,
+.populares {
+    position: relative;
+    z-index: 1; /* Coloca estas secciones debajo del menú */
+}
+
+/* Adaptabilidad */
+@media (max-width: 768px) {
+    .libros img {
+        width: 120px;
+        height: 180px;
+    }
+
+    .slider-contenido img {
+        max-height: 200px;
+    }
+}
+
+/* Estilos para la página de registro */
+
+/* Estilo general para el contenedor del formulario */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo para los grupos de formulario */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo para el botón de envío */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #005bb5;
+}
+
+/* Estilo para mensajes de éxito y error */
+.success {
+    color: green;
+    font-size: 18px;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}
